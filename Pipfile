@@ -16,6 +16,7 @@ whitenoise = "*"
 django-widget-tweaks = "*"
 django-tables2 = "*"
 django-filter = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"
