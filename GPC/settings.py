@@ -24,7 +24,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = '59dl38+#sw2629b(%njzsw@16%#cl79z%57*6u%-$bz-pzn#5c'
-SECRET_KEY = SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
