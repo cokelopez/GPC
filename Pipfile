@@ -15,7 +15,6 @@ psycopg2 = "*"
 whitenoise = "*"
 django-widget-tweaks = "*"
 django-tables2 = "*"
-django-filters = "*"
 
 [requires]
 python_version = "3.7"
