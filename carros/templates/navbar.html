@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block header %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">GPC</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item {% if 'payments' in request.path %}active{% endif %}">
+                <a class="nav-link" href="{% url 'pagos' %}">Pagos</a>
+            </li>
+            <li class="nav-item {% if 'expenses' in request.path %}active{% endif %}">
+                <a class="nav-link" href="{% url 'gasto' %}">Gastos</a>
+            </li>
+            <li class="nav-item {% if 'driver' in request.path %}active{% endif %}">
+                <a class="nav-link" href="{% url 'conductores' %}">Conductores</a>
+            </li>
+            <li class="nav-item {% if 'insurance' in request.path %}active{% endif %}">
+                <a class="nav-link" href="{% url 'polizas' %}">Seguros</a>
+            </li>
+            {% comment %} <li class="nav-item">
+                <a class="nav-link {% if 'owners' in request.path %}active{% endif %}"
+                    href="{% url 'propietarios' %}">Propietarios</a>
+            </li> {% endcomment %}
+            <li class="nav-item">
+                <a class="nav-link {% if 'car' in request.path %}active{% endif %}" href="{% url 'carros' %}">Carros</a>
+            </li>
+        </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        {% if user.is_authenticated %}
+                        <i class="fas fa-user"></i> {{ user.get_username }} </a>
+                        {% else %}
+                        <i class="fas fa-user"></i> Por favor ingresa </a>
+                        {% endif %}
+                    <div class="dropdown-menu dropdown-menu-right dropdown-info"
+                        aria-labelledby="navbarDropdownMenuLink-4">
+                        <a class="dropdown-item" href="{% url 'changepassword' %}">Cambiar Contraseña</a>
+                        <a class="dropdown-item" href="{% url 'logout' %}">Salir</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block header %}
+{% include 'navbar.html' %}
+{% endblock header %}
+
+
+{% load render_table from django_tables2 %}
+
+
+{% block content %}
+
+<div class="container">
+    <h1 class="page-header">Gastos</h1>
+    <p class="pt-3">
+        <a href={% url 'gasto_new' %}><button type="button" class="btn btn-primary" >
+
+            Gasto
+        </button></a>
+    </p>
+
+    {% render_table table %}
+</div> 
+
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}
