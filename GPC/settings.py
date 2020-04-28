@@ -36,7 +36,7 @@ SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_DOMAIN = None
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gentle-dusk-50799.herokuapp.com']
 
 
 # Application definition
