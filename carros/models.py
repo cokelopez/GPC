@@ -17,7 +17,9 @@ class Conductores(models.Model):
     telefono = models.CharField(
         validators=[phone_regex], max_length=17, blank=True)
     ine = models.FileField(upload_to='INE/', blank=True, null=True)
-
+    licencia = models.FileField(upload_to='licencia/', blank=True, null=True)
+    comprobante_domicilio = models.FileField(
+        upload_to='compdom/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

@@ -16,6 +16,8 @@ class ImageColumn(tables.Column):
 class ConductoresTable(tables.Table):
 
     ine = ImageColumn()
+    licencia = ImageColumn()
+    comprobante_domicilio = ImageColumn()
 
     class Meta:
         model = Conductores

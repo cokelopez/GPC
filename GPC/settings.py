@@ -24,7 +24,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = '59dl38+#sw2629b(%njzsw@16%#cl79z%57*6u%-$bz-pzn#5c'
+
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -36,7 +36,7 @@ SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_DOMAIN = None
 
-ALLOWED_HOSTS = ['gentle-dusk-50799.herokuapp.com']
+ALLOWED_HOSTS = ['gentle-dusk-50799.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -162,5 +162,5 @@ LOGIN_REDIRECT_URL = "/"
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-DATABASES['default'] = dj_database_url.config(
-    conn_max_age=600, ssl_require=True)
+# DATABASES['default'] = dj_database_url.config(
+#     conn_max_age=600, ssl_require=True)
