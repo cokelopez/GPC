@@ -13,6 +13,7 @@ class ImageColumn(tables.Column):
         return format_html('<a href="/media/{0}" download>{0}</a>', value)
 
 
+
 class ConductoresTable(tables.Table):
 
     ine = ImageColumn()
@@ -48,6 +49,8 @@ class CarrosTable(tables.Table):
 
 
 class PolizasTable(tables.Table):
+
+    documento = tables.FileColumn()
 
     class Meta:
         model = Polizas
