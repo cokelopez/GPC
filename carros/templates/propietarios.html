@@ -9,19 +9,14 @@
 
 {% block content %}
 <div class="container">
-    <h1 class="page-header">Vehículos</h1>
+    <h1 class="page-header">Propietarios</h1>
     <p class="pt-3">
-        <a href={% url 'carros_new' %}><button type="button" class="btn btn-primary" >
+        <a href={% url 'propietario_new' %}><button type="button" class="btn btn-primary" >
 
-            Conductor
+            Propietario
         </button></a>
-    </p> 
+    </p>
 
     {% render_table table %}
 </div>
-
-{% endblock %}
-
-{% block javascript %}
-
 {% endblock %}

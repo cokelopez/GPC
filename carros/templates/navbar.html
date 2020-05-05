@@ -24,10 +24,10 @@
             <li class="nav-item {% if 'insurance' in request.path %}active{% endif %}">
                 <a class="nav-link" href="{% url 'polizas' %}">Seguros</a>
             </li>
-            {% comment %} <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link {% if 'owners' in request.path %}active{% endif %}"
                     href="{% url 'propietarios' %}">Propietarios</a>
-            </li> {% endcomment %}
+            </li>
             <li class="nav-item">
                 <a class="nav-link {% if 'car' in request.path %}active{% endif %}" href="{% url 'carros' %}">Carros</a>
             </li>

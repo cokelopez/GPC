@@ -11,7 +11,9 @@
 <div class="container">
     <h1 class="page-header">Pólizas</h1>
     <p class="pt-3">
-        
+        <a href={% url 'poliza_new' %}><button type="button" class="btn btn-primary">
+                Nuevo
+            </button></a>
     </p>
 
     {% render_table table %}

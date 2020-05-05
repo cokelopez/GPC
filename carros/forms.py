@@ -127,3 +127,13 @@ class AdminInactividad(forms.ModelForm):
     class Meta:
         model = Inactividad
         fields = ('razon', 'carro', 'fecha_inicio', 'fecha_fin')
+
+
+class PostPolizas(forms.ModelForm):
+    class Meta:
+        model = Polizas
+        fields = ('nombre', 'numero', 'aseguradora', 'carro', 'inicio_poliza',
+                  'fin_poliza', 'documento')
+        widgets = {'inicio_poliza': forms.DateInput(attrs={'type': 'date'}),
+                   'fin_poliza': forms.DateInput(attrs={'type': 'date'})
+                   }

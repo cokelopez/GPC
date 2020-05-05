@@ -16,13 +16,15 @@
             <div class="form-group col-sm-4 col-md-3 pb-1">
                 {{ filter.form.nombres.label_tag }}
                 {% render_field filter.form.buscar class="form-control" %}
-                <button type="submit" class="btn btn-primary mt-2">Search</button>
+                <button type="submit" class="btn btn-primary mt-2">Buscar</button>
             </div>
         </div>
 
     </form>
     <p class="pt-3">
-        
+        <a href={% url 'conductor_new' %}><button type="button" class="btn btn-primary">
+                Nuevo
+            </button></a>
     </p>
 
     {% render_table table %}
