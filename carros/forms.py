@@ -7,13 +7,15 @@ import datetime
 class PostConductores(forms.ModelForm):
     class Meta:
         model = Conductores
-        fields = ('nombres', 'apellidos', 'telefono', 'edad', 'ine')
+        fields = ('nombres', 'apellidos', 'telefono', 'edad',
+                  'ine', 'licencia', 'comprobante_domicilio')
 
 
 class EditConductores(forms.ModelForm):
     class Meta:
         model = Conductores
-        fields = ('nombres', 'apellidos', 'telefono', 'edad', 'ine')
+        fields = ('nombres', 'apellidos', 'telefono', 'edad',
+                  'ine', 'licencia', 'comprobante_domicilio')
 
 
 class PostPropietarios(forms.ModelForm):
