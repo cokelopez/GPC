@@ -13,12 +13,13 @@ class ImageColumn(tables.Column):
         return format_html('<a href="/media/{0}" download>{0}</a>', value)
 
 
-
 class ConductoresTable(tables.Table):
 
     ine = ImageColumn()
     licencia = ImageColumn()
     comprobante_domicilio = ImageColumn()
+    detalles = TemplateColumn(
+        '<a class="btn btn btn-info btn-sm" href="{% url "conductor_edit" record.id %}">Editar</a>')
 
     class Meta:
         model = Conductores
