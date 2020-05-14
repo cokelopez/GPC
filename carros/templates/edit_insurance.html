@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+
+
+{% block content %}
+<div class='container'>
+    <form method="POST">
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+        {% endfor %}
+        {% for field in form.visible_fields %}
+        <div class="form-group">
+            <div class='column'>
+                <label>{{ field.label_tag }}</label>
+                {% render_field field class="form-control form-control-sm" %}
+                {% for error in field.errors %}
+                <span class="help-block">{{ error }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-sm">
+                <span class="glyphicon glyphicon-ok"></span> Save
+            </button>
+            <a href="{% url 'polizas' %}" class="btn btn-default btn-sm">Cancel</a>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger btn float-right btn-sm" data-toggle="modal"
+                data-target="#borrarModal">
+                Borrar
+            </button>
+        </div>
+
+    </form>
+    <!-- Modal -->
+    <div class="modal fade" id="borrarModal" tabindex="-1" role="dialog" aria-labelledby="borrarModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="borrarModalLabel">Borrar</h5>
+                    <button type="button" class="close btn-sm" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{% url 'poliza_borrar' object.id %}" method="post">{% csrf_token %}
+                        <p>Quieres borrar a: "{{ object }}"?</p>
+                        <input type="submit" value="Confirmar">
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content%}

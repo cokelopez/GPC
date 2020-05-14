@@ -52,6 +52,8 @@ class CarrosTable(tables.Table):
 class PolizasTable(tables.Table):
 
     documento = tables.FileColumn()
+    detalles = TemplateColumn(
+        '<a class="btn btn btn-info btn-sm" href="{% url "poliza_edit" record.id %}">Abrir</a>')
 
     class Meta:
         model = Polizas
