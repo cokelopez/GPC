@@ -101,14 +101,6 @@ class GraficaBarras_Pagos(LoginRequiredMixin, View):
         data1 = []
         data2 = []
 
-        # today = datetime.date.today()
-
-        # queryset = Pagos.objects.all().filter(fecha__month=today.month).order_by().values(
-        #     'semana').annotate(PagoTotal=Sum('pago'), GastoTotal=Sum('carro__gasto__monto'))
-        # queryset1 = Pagos.objects.all().filter(fecha__month=today.month).order_by(
-        # ).values('semana').annotate(PagoTotal=Sum('pago'))
-        # queryset2 = Gasto.objects.all().filter(fecha__month=today.month).order_by(
-        # ).values('semana').annotate(GastoTotal=Sum('monto'))
         cursor = connection.cursor()
         cursor.execute("Select * from(SELECT semana, 'gasto' as tipo, SUM(monto) as monto FROM public.carros_gasto Group by semana Union all Select semana, 'pago' as tipo, SUM(pago) as monto From public.carros_pagos Group by semana) as Montos order by tipo, semana")
 
