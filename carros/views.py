@@ -145,9 +145,10 @@ class GraficaBarras_Pagos(LoginRequiredMixin, View):
         gastos_indexes.sort()
 
         # get the index position of the 'semanas' that are missing
+        list_gastos_missing = []
         if len(gastos_indexes) > 0:
             iterator = 0
-            list_gastos_missing = []
+
             while iterator < len(gastos_indexes):
                 try:
                     missingindexes = clean_labels.index(
@@ -174,9 +175,10 @@ class GraficaBarras_Pagos(LoginRequiredMixin, View):
         pagos_indexes.sort()
 
         # get the index position for 'pagos' of the 'semanas' that are missing
+        list_pagos_missing = []
         if len(pagos_indexes) > 0:
             iterator = 0
-            list_pagos_missing = []
+
             while iterator < len(pagos_indexes):
                 try:
                     missingindexes = clean_labels.index(
