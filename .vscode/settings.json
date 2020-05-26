@@ -1,9 +1,17 @@
 {
     "python.pythonPath": "C:\\Users\\jorge.lopez\\.virtualenvs\\GPC-QDmZI6z3\\Scripts\\python.exe",
     "python.testing.pytestArgs": [
-        "."
+        "carros"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.nosetestsEnabled": false,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "*test*.py"
+    ],
+    "python.testing.promptToConfigure": false
 }
