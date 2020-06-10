@@ -64,13 +64,14 @@ class PolizasTable(tables.Table):
 
 class GastosTable(tables.Table):
 
+    factura = tables.FileColumn()
     detalles = TemplateColumn(
         '<a class="btn btn btn-info btn-sm" href="{% url "gasto_edit" record.id %}">Editar</a>')
 
     class Meta:
         model = Gasto
         template_name = "django_tables2/bootstrap-responsive.html"
-        fields = ('monto', 'iva', 'fecha', 'gasto', 'carro', 'factura')
+        fields = ('monto', 'iva', 'fecha', 'gasto', 'carro')
         attrs = {"class": "table table-hover table-sm"}
 
 
