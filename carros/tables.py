@@ -36,7 +36,7 @@ class PropietariosTable(tables.Table):
     class Meta:
         model = Propietarios
         template_name = "django_tables2/bootstrap-responsive.html"
-        fields = ("nombres", "apellidos", "telefono")
+        fields = ("fecha", "apellidos", "telefono")
         attrs = {"class": "table table-hover table-sm"}
 
 
