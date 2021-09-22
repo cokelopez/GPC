@@ -41,7 +41,7 @@ sendgrid==6.2.2
 six==1.14.0
 sqlparse==0.3.1
 typed-ast==1.4.1
-urllib3==1.25.9
+urllib3==1.26.5
 virtualenv==20.0.18
 virtualenv-clone==0.5.4
 wcwidth==0.1.8
